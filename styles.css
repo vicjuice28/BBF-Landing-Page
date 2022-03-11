@@ -106,7 +106,7 @@ a:visited {
 
 .header-input:checked+.header-items {
     background: #ff5d5d;
-    
+
 }
 
 /* Seccion de inicio */
@@ -124,7 +124,7 @@ a:visited {
 .HOME img {
     display: flex;
     align-items: center;
-    
+
 }
 
 .homeText {
@@ -194,7 +194,7 @@ a:visited {
     box-shadow: 0 0 1.875rem -1.25rem #707070;
     /* background-color: rgba(140, 0, 255, 0.425); */
     height: 20rem;
-    align-items:center;
+    align-items: center;
     flex-grow: 1;
     border-radius: 10%;
     margin: 0.5rem .5rem;
@@ -313,17 +313,20 @@ a:visited {
 /* Responsive design Media queries */
 
 @media only screen and (max-width:1100px) {
+
     /* Navbar */
-    .header-label{
+    .header-label {
         display: block;
         cursor: pointer;
     }
+
     .header-items li a {
         font-size: 1.5rem;
         color: #FFFF;
         text-shadow: #313131 1px 1.5px;
     }
-    .header-items{
+
+    .header-items {
         position: fixed;
         top: 65px;
         bottom: 0;
@@ -331,31 +334,33 @@ a:visited {
         left: 0;
         right: 0;
         justify-content: space-evenly;
+        text-align: center;
         flex-direction: column;
         clip-path: circle(0 at center);
-        transition: all .4s ease-out;
+        transition: all .7s ease-out;
     }
 
     .Header-links::after {
         background-color: rgb(235, 235, 235);
-  
-    
+
+
     }
 
 
     .header-input:checked+.header-items {
         clip-path: circle(100% at center);
     }
-    
-    .header img{
+
+    .header img {
         height: 60px;
     }
+
     .BBF-logo {
         font-size: .6rem;
     }
 
-    .Header-links{
-    font-size: .8rem;
+    .Header-links {
+        font-size: .8rem;
     }
 
 
@@ -368,20 +373,21 @@ a:visited {
     .homeText p {
         font-size: 1rem;
     }
-    
+
     .homeText h2 {
         font-size: 3rem;
     }
 
     /* Seccion sobre nosotros */
-    .Whoarewe img{
+    .Whoarewe img {
         width: 45%;
     }
+
     .whoareText h2 {
         /* background-color: aquamarine; */
         font-size: 2rem;
     }
-    
+
     .whoareText p {
         font-size: 1rem;
     }
@@ -395,9 +401,10 @@ a:visited {
 
     /* Seccion estudiantes ayudados */
 
-    .students img{
+    .students img {
         width: 42%;
     }
+
     .studentText h2 {
         font-size: 6rem;
     }
@@ -419,9 +426,10 @@ a:visited {
         font-size: 1rem;
     }
 
-    .Youhelp img{
+    .Youhelp img {
         width: 45%;
     }
+
     .button {
         margin-top: 1rem;
         width: 6.5rem;
@@ -433,13 +441,16 @@ a:visited {
 }
 
 
-@media  only screen and (max-width:700px) {
+@media only screen and (max-width:700px) {
     /* Navbar */
-    
+
     .BBF-logo {
         font-size: .5rem;
-    }  
-    
+    }
+
+    .header-items {
+        width: 90%;
+    }
     .header-items li a {
         font-size: 1.2rem;
         text-align: center;
@@ -447,9 +458,10 @@ a:visited {
         color: #FFFF;
         text-shadow: #313131 1px 1.5px;
     }
+
     /* Seccion Home */
 
-      .HOME {
+    .HOME {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -459,7 +471,7 @@ a:visited {
         /* background-color: rgba(229, 255, 0, 0.527); */
     }
 
-    .homeText{
+    .homeText {
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -467,7 +479,7 @@ a:visited {
         justify-content: center;
     }
 
-      .HOME img {
+    .HOME img {
         min-width: 350px;
 
     }
@@ -477,27 +489,29 @@ a:visited {
         width: 100%;
         text-align: center;
     }
-    
+
     .homeText h2 {
         font-size: 2rem;
         text-align: center;
     }
 
-    .Whoarewe{
+    .Whoarewe {
         flex-direction: column;
         margin-bottom: 2rem;
     }
+
     /* Seccion sobre nosotros */
 
-    .Whoarewe img{
+    .Whoarewe img {
         min-width: 350px;
         margin-bottom: 0;
     }
+
     .whoareText h2 {
         margin-top: 0;
         /* background-color: aquamarine; */
     }
-    
+
     .whoareText p {
         font-size: 1rem;
         text-align: center;
@@ -512,21 +526,25 @@ a:visited {
 
 
     /* Seccion estudiantes ayudados */
-    .students{
+    .students {
         flex-direction: column;
         align-items: center;
     }
-    .students img{
+
+    .students img {
         min-width: 300px;
     }
-    .studentText{
+
+    .studentText {
         width: 100%;
     }
+
     .studentText h2 {
         font-size: 4rem;
         margin-top: 0;
     }
-    .studentText p{
+
+    .studentText p {
         font-size: 1.3rem;
         margin: 5px 0 15px;
     }
@@ -540,16 +558,18 @@ a:visited {
 
     /* Seccion donaciones */
 
-    .Youhelp{
+    .Youhelp {
         flex-direction: column-reverse;
     }
 
-    .Youhelp img{
+    .Youhelp img {
         min-width: 350px;
     }
-    .youText{
+
+    .youText {
         width: 100%;
     }
+
     .youText h2 {
         font-size: 2.8rem;
         margin: 0 0 1rem;
@@ -560,9 +580,10 @@ a:visited {
         width: 100%;
     }
 
-    .Youhelp img{
+    .Youhelp img {
         width: 45%;
     }
+
     .button {
         margin-top: 1.5rem;
         width: 6.5rem;
@@ -571,5 +592,5 @@ a:visited {
         background-color: rgb(255, 55, 55);
         font-size: .8rem;
     }
-    
+
 }
