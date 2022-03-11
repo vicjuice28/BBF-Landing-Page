@@ -1,7 +1,7 @@
 body {
     margin: auto auto;
     padding: 0 0;
-    max-width: 1420px;
+    max-width: 1400px;
     box-sizing: border-box;
     background-color: #F7F7F7;
     font-family: 'Noto Sans Display', sans-serif;
@@ -14,9 +14,11 @@ html {
 h2 {
     font-weight: 600;
 }
-a{
+
+a {
     color: #313131
 }
+
 a:visited {
     color: #313131
 }
@@ -32,9 +34,13 @@ a:visited {
     background-color: #F7F7F7;
     margin: auto auto;
     justify-content: space-between;
-    
     align-items: center;
     width: 98%;
+    height: 85px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 .header img {
@@ -47,7 +53,7 @@ a:visited {
     display: flex;
     list-style: none;
     align-items: center;
-    
+
 }
 
 .BBF-logo {
@@ -63,14 +69,44 @@ a:visited {
 .Header-links {
     display: flex;
     justify-content: space-evenly;
+    flex-direction: column;
     text-decoration: none;
     font-size: 1.05rem;
     margin: 0.3rem;
     padding: 0.25rem;
+    --clippy: polygon(0 0, 0 0, 0 100%, 0 100%);
+    ;
+
+
 }
 
+.Header-links::after {
+    display: block;
+    content: "";
+    background-color: rgb(255, 24, 24);
+    width: 90%;
+    align-items: center;
+    margin-top: 3px;
+    height: 3px;
+    clip-path: var(--clippy);
+    transition: clip-path .4s;
+
+}
+
+/* Para responsive */
+
 .Header-links:hover {
-    color: rgb(255, 24, 24);
+    --clippy: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.header-label,
+.header-input {
+    display: none;
+}
+
+.header-input:checked+.header-items {
+    background: #ff5d5d;
+    
 }
 
 /* Seccion de inicio */
@@ -80,7 +116,7 @@ a:visited {
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    margin-top: 2.5rem;
+    margin-top: 5.2rem;
     align-items: center;
     /* background-color: rgba(229, 255, 0, 0.527); */
 }
@@ -88,11 +124,12 @@ a:visited {
 .HOME img {
     display: flex;
     align-items: center;
+    
 }
 
 .homeText {
     justify-content: left;
-    width: 45%;
+    width: 42%;
 
 }
 
@@ -147,16 +184,17 @@ a:visited {
 .container_cards {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin: auto auto;
     margin-bottom: 4rem;
-
+    /* background-color: red; */
 }
 
 .cards {
     box-shadow: 0 0 1.875rem -1.25rem #707070;
     /* background-color: rgba(140, 0, 255, 0.425); */
     height: 20rem;
-    align-items: center;
+    align-items:center;
     flex-grow: 1;
     border-radius: 10%;
     margin: 0.5rem .5rem;
@@ -181,6 +219,7 @@ a:visited {
     text-align: center;
 }
 
+/* Seccion estudiantes ayudados */
 
 .students {
     display: flex;
@@ -206,6 +245,7 @@ a:visited {
 
 .howGet {
     margin-bottom: 4rem;
+    justify-content: center;
 }
 
 .howGet h2 {
@@ -214,6 +254,7 @@ a:visited {
     text-align: center;
 }
 
+/* Seccion tu ayudas */
 
 .Youhelp {
     display: flex;
@@ -229,7 +270,7 @@ a:visited {
     align-items: center;
     /* background:rgba(165, 42, 42, 0.233); */
     width: 60%;
-    
+
 }
 
 .youText h2 {
@@ -263,6 +304,272 @@ a:visited {
     background-color: rgb(206, 48, 48);
 }
 
-.footer h5{    
+.footer h5 {
     text-align: center;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Responsive design Media queries */
+
+@media only screen and (max-width:1100px) {
+    /* Navbar */
+    .header-label{
+        display: block;
+        cursor: pointer;
+    }
+    .header-items li a {
+        font-size: 1.5rem;
+        color: #FFFF;
+        text-shadow: #313131 1px 1.5px;
+    }
+    .header-items{
+        position: fixed;
+        top: 65px;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        right: 0;
+        justify-content: space-evenly;
+        flex-direction: column;
+        clip-path: circle(0 at center);
+        transition: all .4s ease-out;
+    }
+
+    .Header-links::after {
+        background-color: rgb(235, 235, 235);
+  
+    
+    }
+
+
+    .header-input:checked+.header-items {
+        clip-path: circle(100% at center);
+    }
+    
+    .header img{
+        height: 60px;
+    }
+    .BBF-logo {
+        font-size: .6rem;
+    }
+
+    .Header-links{
+    font-size: .8rem;
+    }
+
+
+    /* Seccion Home */
+    .HOME img {
+        width: 400px;
+
+    }
+
+    .homeText p {
+        font-size: 1rem;
+    }
+    
+    .homeText h2 {
+        font-size: 3rem;
+    }
+
+    /* Seccion sobre nosotros */
+    .Whoarewe img{
+        width: 45%;
+    }
+    .whoareText h2 {
+        /* background-color: aquamarine; */
+        font-size: 2rem;
+    }
+    
+    .whoareText p {
+        font-size: 1rem;
+    }
+
+    /* Seccion como ayudamos */
+
+    .howhelp h2 {
+        font-size: 2.5rem;
+    }
+
+
+    /* Seccion estudiantes ayudados */
+
+    .students img{
+        width: 42%;
+    }
+    .studentText h2 {
+        font-size: 6rem;
+    }
+
+
+    /* Seccion como conseguir */
+
+    .howGet h2 {
+        font-size: 2.5rem;
+    }
+
+    /* Seccion donaciones */
+
+    .youText h2 {
+        font-size: 3rem;
+    }
+
+    .youText p {
+        font-size: 1rem;
+    }
+
+    .Youhelp img{
+        width: 45%;
+    }
+    .button {
+        margin-top: 1rem;
+        width: 6.5rem;
+        text-align: center;
+        border-radius: 1.8rem;
+        background-color: rgb(255, 55, 55);
+        font-size: .8rem;
+    }
+}
+
+
+@media  only screen and (max-width:700px) {
+    /* Navbar */
+    
+    .BBF-logo {
+        font-size: .5rem;
+    }  
+    
+    .header-items li a {
+        font-size: 1.2rem;
+        text-align: center;
+        justify-content: center;
+        color: #FFFF;
+        text-shadow: #313131 1px 1.5px;
+    }
+    /* Seccion Home */
+
+      .HOME {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        margin-top: 5.2rem;
+        align-items: center;
+        /* background-color: rgba(229, 255, 0, 0.527); */
+    }
+
+    .homeText{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+      .HOME img {
+        min-width: 350px;
+
+    }
+
+    .homeText p {
+        font-size: 1rem;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .homeText h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .Whoarewe{
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+    /* Seccion sobre nosotros */
+
+    .Whoarewe img{
+        min-width: 350px;
+        margin-bottom: 0;
+    }
+    .whoareText h2 {
+        margin-top: 0;
+        /* background-color: aquamarine; */
+    }
+    
+    .whoareText p {
+        font-size: 1rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Seccion como ayudamos */
+
+    .howhelp h2 {
+        font-size: 2rem;
+    }
+
+
+    /* Seccion estudiantes ayudados */
+    .students{
+        flex-direction: column;
+        align-items: center;
+    }
+    .students img{
+        min-width: 300px;
+    }
+    .studentText{
+        width: 100%;
+    }
+    .studentText h2 {
+        font-size: 4rem;
+        margin-top: 0;
+    }
+    .studentText p{
+        font-size: 1.3rem;
+        margin: 5px 0 15px;
+    }
+
+
+    /* Seccion como conseguir */
+
+    .howGet h2 {
+        font-size: 2rem;
+    }
+
+    /* Seccion donaciones */
+
+    .Youhelp{
+        flex-direction: column-reverse;
+    }
+
+    .Youhelp img{
+        min-width: 350px;
+    }
+    .youText{
+        width: 100%;
+    }
+    .youText h2 {
+        font-size: 2.8rem;
+        margin: 0 0 1rem;
+    }
+
+    .youText p {
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .Youhelp img{
+        width: 45%;
+    }
+    .button {
+        margin-top: 1.5rem;
+        width: 6.5rem;
+        text-align: center;
+        border-radius: 1.8rem;
+        background-color: rgb(255, 55, 55);
+        font-size: .8rem;
+    }
+    
 }
