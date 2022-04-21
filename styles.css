@@ -292,10 +292,11 @@ a:visited {
     text-align: center;
     border-radius: 1.8rem;
     background-color: rgb(255, 55, 55);
+    text-decoration: none;
+    
 }
 
-.button a {
-    text-decoration: none;
+.button h3{
     color: #F7F7F7;
     font-weight: 600;
 }
@@ -435,7 +436,6 @@ a:visited {
         width: 6.5rem;
         text-align: center;
         border-radius: 1.8rem;
-        background-color: rgb(255, 55, 55);
         font-size: .8rem;
     }
 }
@@ -585,11 +585,10 @@ a:visited {
     }
 
     .button {
-        margin-top: 1.5rem;
+        margin-top: 1.5rem; 
         width: 6.5rem;
         text-align: center;
         border-radius: 1.8rem;
-        background-color: rgb(255, 55, 55);
         font-size: .8rem;
     }
 
